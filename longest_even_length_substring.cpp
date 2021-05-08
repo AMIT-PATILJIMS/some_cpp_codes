@@ -1,6 +1,6 @@
 Longest Even Length Substring such that Sum of First and Second Half is same
 
-question link: https://www.geeksforgeeks.org/longest-even-length-substring-sum-first-second-half/
+question link: https://www.geeksforgeeks.org/longest-even-length-substring-sum-first-second-half/     
 
 #include<iostream>
 using namespace std;
