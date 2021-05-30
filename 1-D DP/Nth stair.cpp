@@ -28,3 +28,16 @@
 
         return dp[n];
     }
+
+
+
+/*
+mistakes that you done during coding
+
+dp[i] = (dp[i-1] + dp[i-2])%(10^9 + 7)
+
+directly writing 10^9 is not allowed it will give error.
+
+Note: At this condition you should use power function.
+
+*/
