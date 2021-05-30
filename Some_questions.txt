@@ -1,0 +1,17 @@
+Some Questions:
+Question 1)
+https://www.geeksforgeeks.org/find-equal-or-middle-point-in-a-sorted-array-with-duplicates/?ref=rp
+
+Question 2)
+https://practice.geeksforgeeks.org/problems/sum-of-numbers-in-string-1587115621/1#:~:text=(str%20%2B%3D%20ch).,add%20it%20to%20a%20string%20.
+
+Question 3)
+
+
+
+Some Other Question You Should Try
+Question 1)
+https://leetcode.com/problems/squares-of-a-sorted-array/
+
+Question 2)
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
