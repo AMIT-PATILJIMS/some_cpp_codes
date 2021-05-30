@@ -1,5 +1,6 @@
 // Insertion Sort
-
+// For video explanation
+// https://www.youtube.com/watch?v=s9fmGjFY1v0
 #include<iostream>
 using namespace std;
 
