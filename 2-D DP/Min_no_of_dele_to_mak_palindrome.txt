@@ -1,0 +1,16 @@
+// https://www.youtube.com/watch?v=CFwCCNbRuLY&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=28
+
+
+/*Logic
+
+1. First find the LPS of a string
+
+2. Number of deletion in a string is inversely proportional to the Palindromic subsequence.
+
+3. That's why we find the Longest palindromic subsequence denoted as L.
+
+4. After that str.size() - L
+
+5. This is our answer. 
+  
+*/
