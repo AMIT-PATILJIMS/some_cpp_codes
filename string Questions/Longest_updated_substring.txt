@@ -1,0 +1,79 @@
+// Longest updated substring
+
+// Naive approach O(n^2)
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    string str="ax";
+    int c;
+    int mx = INT_MIN;
+    
+    string s;
+    
+    string ans;
+    
+    for(int i=0;i<str.size();i++){
+        c=0;
+        s="";
+        
+        for(int j=i;j<str.size();j++){
+            if(str[i] == str[j]){
+                c++;
+                s = s + str[j];
+            }
+        }
+        
+        if(mx <= c){
+            mx=c;
+            ans=s;
+        }
+    }
+    
+    cout<<mx;
+    cout<<endl;
+    cout<<ans;
+	return 0;
+}
+
+
+
+
+// O(n) approach using frequency arrays.
+
+//Note : I have done a mistake , I forget to insert equals(=) to in mx <= freq[i]
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string str="azzeewww";
+
+    int freq[26] = {0};
+
+    int mx = INT_MIN;
+
+    for(int i=0;i<str.size();i++){
+        freq[str[i]-'a']++;
+    }
+
+    char ch;
+
+    for(int i=0;i<26;i++){
+        if(freq[i] != 0 && mx <= freq[i]){
+            mx = freq[i];
+            ch = 'a' + i;
+        }
+    }
+
+    string s;
+
+    for(int i=0;i<mx;i++){
+        s = s + ch;
+    }
+
+    cout<<mx<<endl<<s;
+    return 0;
+}
