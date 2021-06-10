@@ -1,0 +1,24 @@
+
+// https://practice.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1#
+
+// Tower of hanoi using recursion
+
+    int c=0;
+    // avoid space at the starting of the string in "move disk....."
+    long long toh(int n, int from, int to, int aux){
+        if(n==0){
+            return c; // what shold I return here ??
+        }
+        
+        toh(n-1,from,aux,to);
+        cout<<"move disk "<<n<<" from rod "<<from<<" to rod "<<to<<"\n";
+        c++;
+        toh(n-1,aux,to,from);
+    }
+
+
+/*
+Note: I do one mistake here to return in long long 
+
+the solution is that to declare a global variable c amd ++ every time when cout is executed and return c when n==0; 
+*/
