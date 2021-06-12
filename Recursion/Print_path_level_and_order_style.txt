@@ -1,0 +1,27 @@
+// Print stair path
+
+// Level and option style
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void printStair(int n,string str){
+    
+    if(n<0){
+        return;
+    }
+    
+    if(n==0){
+        cout<<str<<"\n";
+    }
+    
+    printStair(n-1, str + "1");
+    printStair(n-2, str + "2");
+    printStair(n-3, str + "3");
+}
+
+int main(){
+    int n=7;
+    printStair(n,"");
+    return 0;
+}
