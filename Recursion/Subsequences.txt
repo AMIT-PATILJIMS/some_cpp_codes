@@ -1,0 +1,20 @@
+// Get the subsequences of a string using recursion
+
+
+#include<iostream>
+using namespace std;
+
+void solve(string str,string op){
+    if(str.size() == 0){
+        cout<<op<<"\n";
+        return;
+    }
+    
+    solve(str.substr(1),op);
+    solve(str.substr(1),op+str[0]);
+}
+int main(){
+    string str="abc";
+    solve(str,"");
+	return 0;
+}
