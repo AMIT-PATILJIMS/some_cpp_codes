@@ -1,0 +1,25 @@
+// print maze paths
+
+#include<iostream>
+using namespace std;
+
+
+void printmazep(int sr,int sc,int dr,int dc,string path){
+    if(sr > dr || sc > dc){
+        return;
+    }
+    
+    if(sr == dr && sc == dc){
+        cout<<path<<"\n";
+        return;
+    }
+    
+    printmazep(sr+1,sc,dr,dc,path+"v");
+    printmazep(sr,sc+1,dr,dc,path+"h");
+    
+}
+
+int main(){
+	printmazep(0,0,3,3,"");
+	return 0;
+}

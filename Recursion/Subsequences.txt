@@ -13,6 +13,7 @@ void solve(string str,string op){
     solve(str.substr(1),op);
     solve(str.substr(1),op+str[0]);
 }
+
 int main(){
     string str="abc";
     solve(str,"");
