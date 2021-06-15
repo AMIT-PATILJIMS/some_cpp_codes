@@ -1,0 +1,9 @@
+// when we use cin with string
+
+cin>>str;
+
+Note : it ignores the white spaces , when the space is encountered.
+
+// to take the white spaces in the input.
+
+getline(cin,str);
