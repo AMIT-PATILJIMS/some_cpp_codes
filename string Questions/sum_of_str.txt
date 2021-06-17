@@ -1,0 +1,39 @@
+// sum of integer in a given string
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int sti(string val){
+    int ans=0;
+    for(int i=0;i<val.size();i++){
+        ans = ans*10 + val[i]-'0';
+    }
+    return ans;
+}
+
+int solve(string str){
+    int ans = 0;
+    string val;
+
+    for(int i=0;i<str.size();){
+            val.clear();
+        if(str[i] >= '0' && str[i] <= '9'){
+            while(str[i] >= '0' && str[i] <= '9'){
+            val.push_back(str[i++]);
+            }
+            ans+=sti(val);
+        }
+
+        else{
+            i++;
+        }
+    }
+    return ans;
+}
+int main(){
+    string str="1yu34";
+
+    cout<<solve(str);
+    return 0;
+}
