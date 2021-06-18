@@ -1,0 +1,40 @@
+// sum of -ve numbers
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int extract(string val){
+    int result=0;
+    for(int i=0;i<val.size();i++){
+        result = result*10 + val[i]-'0';
+    }
+    return result;
+}
+
+int main(){
+    string str="-4rt-7rt-8";
+    string val;
+    
+    int nans=0;
+    
+    for(int i=0;i<str.size();){
+        val.clear();
+        
+        if(str[i] == '-'){
+            i++;
+            while(str[i]>='0' && str[i]<='9'){
+                val = val + str[i];
+                i++;
+            }
+            
+            nans = nans + extract(val);
+        }
+        
+        else{
+            i++;
+        }
+    }
+    cout<<"-"<<nans;
+    return 0;
+}
