@@ -4,36 +4,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int sti(string val){
-    int ans=0;
-    for(int i=0;i<val.size();i++){
-        ans = ans*10 + val[i]-'0';
+int extract(string str){
+    int result = 0;
+    for(int i=0;i<str.size();i++){
+        result = result*10 + str[i]-'0';
     }
-    return ans;
+    return result;
 }
 
-int solve(string str){
-    int ans = 0;
+
+int main(){
+    
+    
+    string str = "12x1yz32";//45
+    int ans=0;
     string val;
-
+    
     for(int i=0;i<str.size();){
-            val.clear();
-        if(str[i] >= '0' && str[i] <= '9'){
-            while(str[i] >= '0' && str[i] <= '9'){
-            val.push_back(str[i++]);
+        val.clear();
+        if(str[i]>='0' && str[i]<='9'){
+            while(str[i]>='0' && str[i]<='9'){
+                val = val + str[i];
+                i++;
             }
-            ans+=sti(val);
+            ans = ans + extract(val);
         }
-
+        
         else{
             i++;
         }
     }
-    return ans;
-}
-int main(){
-    string str="1yu34";
-
-    cout<<solve(str);
+    
+    cout<<ans;
     return 0;
 }
