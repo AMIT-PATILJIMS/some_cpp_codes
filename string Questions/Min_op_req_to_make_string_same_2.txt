@@ -2,6 +2,23 @@
 
 // this is different question *(In one step you can choose any of the character)
 
+
+/*
+x: acbd
+y: dbcx
+
+when we create the frequency array
+
+a b c d e ..... x
+1 0 0 0 0 ..... -1
+
+when we take the absolute value we get c = 2
+
+Note : But we want minimum number of steps
+
+we can either change a or x so minimum number of steps is c/2.
+*/
+
     int minSteps(string s,string t){
         int c=0;
         int freq[26] = {0};
