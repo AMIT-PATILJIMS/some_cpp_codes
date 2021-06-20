@@ -1,4 +1,5 @@
-https://www.geeksforgeeks.org/run-length-encoding/
+// https://www.geeksforgeeks.org/run-length-encoding/
+
 
 
 #include<iostream>
@@ -8,7 +9,7 @@ using namespace std;
 void RunLengthEncoding(char *str){
     int n = strlen(str);
     
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n;i++){  // we write i++ here becaue if str[i] != str[i+1] then our condition fails and our program will give us TLE.
         int c=1;
         while(str[i] == str[i+1] && i<n-1){
             c++;
