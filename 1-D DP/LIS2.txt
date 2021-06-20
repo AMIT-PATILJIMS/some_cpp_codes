@@ -1,12 +1,18 @@
 // LCS using 1-DP
+// this solution is wrong need some implementation
+
 
 #include<algorithm>
 #include<iostream>
 
 using namespace std;
 
-int lis(int arr[],int i,int n){
-    int dp[n+1] = {1};
+int lis(int arr[],int x,int n){
+    int dp[n+1];
+
+for(int i=0;i<n;i++){
+dp[i] = 1;
+}
 
     for(int i=0;i<n-1;i++){
         if(arr[i] < arr[i+1]){
