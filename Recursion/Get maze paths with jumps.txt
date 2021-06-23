@@ -1,0 +1,61 @@
+// get maze paths with jumps
+
+
+/*
+Link of the question : https://www.youtube.com/watch?v=VaGBRiSdtFI&list=PL-Jc9J83PIiFxaBahjslhBD1LiJAV7nKs&index=33
+
+actually this solution is giving wrong output need some modifications
+*/
+
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+vector<string>printmpath(int sr,int sc,int dr,int dc){
+    if(sr==dr && sc==dc){
+        vector<string>bres;
+        bres.push_back("");
+        return bres;
+    }
+    
+    vector<string>paths;
+    
+    // horizontal direction
+    for(int ms=1; ms <=dc-sc; ms++){
+    vector<string>hpaths = printmpath(sr,sc+ms,dr,dc);
+    for(string hpath : hpaths){
+        paths.push_back("h" + ms + hpath);
+    }
+    }
+    
+    //vertical direction
+    for(int ms=1; ms <= dr-sr; ms++){
+    vector<string>vpaths = printmpath(sr+ms,sc,dr,dc);
+    for(string vpath : vpaths){
+        paths.push_back("v" + ms + vpath);
+    }
+    }
+    
+    
+    // digonal moves
+    // we to check for vertical as well as for horizontal
+    for(int ms=1; ms <= dr-sr && ms<=dc-sc ; ms++){
+    vector<string>dpaths = printmpath(sr+ms,sc+ms,dr,dc);
+    for(string dpath : dpaths){
+        paths.push_back("d" + ms + dpath);
+    }
+    }
+    
+    return paths;
+}
+
+int main(){
+    vector<string>ans = printmpath(1,1,3,3);
+    
+    for(int i=0;i<ans.size();i++){
+        cout<<ans[i]<<"\n";
+    }
+    return 0;
+}

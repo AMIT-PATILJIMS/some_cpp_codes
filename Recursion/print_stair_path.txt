@@ -1,0 +1,48 @@
+// Question link : https://www.youtube.com/watch?v=NEuYcztalew&list=PL-Jc9J83PIiFxaBahjslhBD1LiJAV7nKs&index=37
+
+// print the stair paths
+
+/*
+
+we call this method as level and options because at nth stair we have a option to take 1 step, 2 step and 3 step
+
+*/
+
+// print the stair paths
+
+/*
+
+we call this method as level and options because at nth stair we have a option to take 1 step, 2 step and 3 step
+
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void pstairpath(int n,string str){
+    //base condition
+    if(n < 0){
+        return;
+    }
+    
+    if(n==0){
+        cout<<str<<"\n";
+        return;
+    }
+    /*
+    this is the mistake
+    if(n==0||n==1||n==2||n==3){
+        cout<<str+"1"<<endl;
+        return;
+    }
+    */
+    
+    pstairpath(n-1,str+"1");
+    pstairpath(n-2,str+"2");
+    pstairpath(n-3,str+"3");
+}
+
+int main(){
+    pstairpath(4,"");
+    return 0;
+}
