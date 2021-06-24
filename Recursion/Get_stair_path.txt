@@ -1,3 +1,4 @@
+// similar to previous question
 // Get stair path
 // question link : https://www.youtube.com/watch?v=hMJAlbJIS7E
 
