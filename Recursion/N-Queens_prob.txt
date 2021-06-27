@@ -1,0 +1,34 @@
+// N queens problem
+
+/*
+Note : the question is incomplete and not giving any output
+*/
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void pNqueens(vector<vector<int>>chess,string qsf, int row){
+    //base
+    if(row == chess.size()){
+        cout<<qsf<<"\n";
+        return;
+    }
+    
+    // fun call
+    for(int col=0 ; col < chess.size(); col++){
+        chess[row][col]=1;
+        pNqueens(chess,qsf + to_string(row) + '-' + to_string(col) + ',', row + 1);
+        chess[row][col]=0;
+    }
+}
+
+int main(){
+	int n;
+	cin>>n;
+	
+	vector<vector<int>>chess;
+	
+	pNqueens(chess, "", 0);
+	return 0;
+}
