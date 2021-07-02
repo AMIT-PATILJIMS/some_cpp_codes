@@ -1,0 +1,40 @@
+// Find the subsets of a string
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void generateSubsets(char *inp, char *out, int i, int j, set<string>&s){
+    //base condi
+    if(inp[i] == '\0'){
+        out[j]='\0';
+        s.insert(out);
+        return;
+    }
+    
+    //function call
+    //include it
+    out[j]=inp[i];
+    generateSubsets(inp,out,i+1,j+1,s);
+    
+    //not include it
+    generateSubsets(inp,out,i+1,j,s);
+}
+
+int main(){
+
+	char inp[10];
+	cin>>inp;
+
+	char out[10];
+
+	set<string>s;
+
+	generateSubsets(inp, out, 0, 0, s);
+
+
+	for(string str:s){
+		cout<<str<<endl;
+	}
+	
+	return 0;
+}
