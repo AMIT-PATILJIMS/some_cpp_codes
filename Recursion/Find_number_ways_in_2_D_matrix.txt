@@ -1,0 +1,58 @@
+/*
+given a 2-D matrix 
+
+count the number of ways you can move from top left corner to bottom right corner
+
+i/p
+
+4
+4
+
+o/p
+
+70
+*/
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int countPathsBR2TL(int n,int m){
+    //base condition
+    if(n==0 && m==0){
+        return 1;
+    }
+    
+    if(n<0 || m<0) {
+		// I have gone out of bounds
+		return 0;
+	}
+    
+    //fun call
+    
+    //move up
+    int x = countPathsBR2TL(n-1,m);
+    
+    //move down
+    int y = countPathsBR2TL(n,m-1);
+    
+    return x+y;
+}
+
+int main(){
+
+	int n; // number of rows in the matrix
+	cin>>n;
+
+	int m; // number of columns in the matrix
+	cin>>m;
+
+	// int count = countPathsTL2BR(0, 0, n, m);
+	// cout<<count<<endl;
+
+	int count = countPathsBR2TL(n-1, m-1);
+	cout<<count<<endl;
+
+	return 0;
+}
