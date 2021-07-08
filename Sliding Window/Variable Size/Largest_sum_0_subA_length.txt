@@ -1,0 +1,32 @@
+// https://practice.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1#
+
+// this code contains some errors
+
+int maxLen(int A[], int n)
+{
+    int psum=0;
+    int mx=0; // yha parr galti se INT_MIN likh dia tha... Aur test case fail ho gya..
+    
+    unordered_map<int,int>mp;
+    int j;
+    
+    for(int i=0;i<n;i++){
+        psum += A[i];
+        
+        if(psum == 0){
+            mx = max(mx,i+1);
+        }
+        
+        if(mp.find(psum) != mp.end()){
+            j = mp[psum];
+            mx = max(mx,i-j);
+        }
+        
+        else{
+            // similar to mp.insert({psum,i})
+            mp[psum] = i;
+        }
+    }
+    
+    return mx;
+}
